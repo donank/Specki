@@ -28,7 +28,7 @@ message.channel.send({
 			},
 			{
 				name: "Invite (Neccessary)",
-				value: "https://discordapp.com/oauth2/authorize?client_id=405408491969314826&permissions=70372449&scope=bot",
+				value: "https://discordapp.com/oauth2/authorize?client_id=405408491969314826&permissions=70380641&scope=bot",
 				inline: true
 			},
 			{
@@ -39,7 +39,7 @@ message.channel.send({
 		],
 		footer: {
 			icon_url: client.user.avatarURL,
-			text: "v2.2.6 | " + client.guilds.size + "G, " + client.channels.size + "C, " + client.users.size + "U | Commit " + commid + " | by @rx#0611 using discord.js"
+			text: "v2.2.7 | " + client.guilds.size + "G, " + client.channels.size + "C, " + client.users.size + "U | Commit " + commid + " | by @rx#0611 using discord.js"
 		}
 	}
 });
