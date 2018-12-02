@@ -13,6 +13,8 @@ const {table} = require("table");
 const breakdance = require("breakdance");
 const ytranslate = require("yandex-translate")(process.env.YNDX_TK);
 const googleTTS = require("google-tts-api");
+const xmorse = require("xmorse");
+const ascii85 = require("ascii85");
 const exec = require("child_process").exec;
 const path = require("path");
 const client = new discord.Client({
@@ -64,6 +66,7 @@ client.on("message", async message => {
 		var command = args.shift().toLowerCase();
 		if (command == "4") { command = "4chan"; };
 		if (command == "links" || command == "invite") { command = "about"; };
+		if (command == "arch") { command = "aur"; };
 		if (command == "🅱") { command = "b"; };
 		if (command == "decode") { command = "decrypt"; };
 		if (command == "de") { command = "deutsch"; };
@@ -77,7 +80,7 @@ client.on("message", async message => {
 		if (command == "clap") { command = "klatsch"; };
 		if (command == "osu!") { command = "osu"; };
 		if (command == "mock") { command = "spott"; };
-		if (fs.existsSync("./commands/" + command + ".js")) {
+		if (fs.existsSync("./commands/" + command.replace(/.*\//, "") + ".js")) {
 			if (command in cmdcnt) {
 				cmdcnt[command]++;
 			} else {
@@ -112,7 +115,7 @@ client.on("message", async message => {
 				}, 2500);
 			};
 			console.log("Nachricht wird als " + process.env.PREFIX + command + "-Command verarbeitet.");
-			fs.readFile("./commands/" + command + ".js", "utf8", function (err, data) {
+			fs.readFile("./commands/" + command.replace(/.*\//, "") + ".js", "utf8", function (err, data) {
 				message.channel.startTyping();
 				eval(data);
 				message.channel.stopTyping();
