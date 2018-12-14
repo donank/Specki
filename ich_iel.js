@@ -1,5 +1,5 @@
 const discord = require("discord.js");
-const gtranslate = require("google-translate-api");
+// const gtranslate = require("google-translate-api");
 const cool = require("cool-ascii-faces");
 const request = require("request");
 const figlet = require("figlet");
@@ -11,10 +11,11 @@ const fs = require("fs");
 const {VM} = require("vm2");
 const {table} = require("table");
 const breakdance = require("breakdance");
-const ytranslate = require("yandex-translate")(process.env.YNDX_TK);
+// const ytranslate = require("yandex-translate")(process.env.YNDX_TK);
 const googleTTS = require("google-tts-api");
 const xmorse = require("xmorse");
 const ascii85 = require("ascii85");
+const {translate, detectLanguage, wordAlternatives, translateWithAlternatives} = require("deepl-translator");
 const exec = require("child_process").exec;
 const path = require("path");
 const client = new discord.Client({
@@ -54,6 +55,9 @@ client.on("ready", () => {
 	});
 });
 client.on("message", async message => {
+	if (message.content.match(/🎩\s*🦆/)) {
+		message.channel.send("Yeah digga");
+	};
 	if (message.author.bot || message.content.indexOf(process.env.PREFIX) !== 0 || (offline && ownerIds.includes(message.author.id) == false)) {
 		return;
 	};
