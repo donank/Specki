@@ -1,13 +1,13 @@
 if (args && args != "") {
 	if (Math.round(Math.random())) {
-		message.channel.send(message.guild.emojis.find("name", args[0]) + " :thumbsup:");
+		message.channel.send(args[0] + " 👍");
 	} else {
-		message.channel.send(message.guild.emojis.find("name", args[0]) + " :thumbsdown:");
+		message.channel.send(args[0] + " 👎");
 	};
 } else {
 	if (Math.round(Math.random())) {
-		message.channel.send(":thumbsup:");
+		message.react("👍");
 	} else {
-		message.channel.send(":thumbsdown:");
+		message.react("👎");
 	};
 };
