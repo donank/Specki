@@ -20,7 +20,7 @@ if (ownerIds.includes(message.author.id)) {
 				}
 			}
 		}).run(args.join(" "));
-		var vmmsg = ((vmout != undefined) ? "Output: \n```" + JSON.stringify(vmout) + "```\n\n" : "") + ((vmlog != "") ? "Console: \n```" + vmlog + "```" : "");
+		var vmmsg = ((vmout != undefined) ? "Output: \n```" + JSON.stringify(vmout).replace(/`/g, "") + "```\n\n" : "") + ((vmlog != "") ? "Console: \n```" + vmlog.replace(/`/g, "") + "```\n\n" : "");
 		if (vmmsg) {
 			message.channel.send(vmmsg);
 		} else {
