@@ -21,7 +21,7 @@ const client = new discord.Client({
 	autoReconnect: true,
 	disableEveryone: true
 });
-var ownerIds = ["175877241517899776"];
+var ownerIds = ["175877241517899776", "421371986824921109"];
 var rllist = new Set();
 var rltime = {};
 var cmdcnt = {};
@@ -66,6 +66,7 @@ client.on("message", async message => {
 		var command = args.shift().toLowerCase();
 		if (command == "4") { command = "4chan"; };
 		if (command == "links" || command == "invite") { command = "about"; };
+		if (command == "|||") { command = "archillect"; };
 		if (command == "archive") { command = "archiv"; };
 		if (command == "arch") { command = "aur"; };
 		if (command == "🅱") { command = "b"; };
