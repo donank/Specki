@@ -9,12 +9,12 @@ message.channel.send({
 		fields: [
 			{
 				name: "Website",
-				value: "https://rsch.neocities.org",
+				value: "https://rxyz.rocks",
 				inline: true
 			},
 			{
 				name: "Bot List",
-				value: "https://discordbots.org/bot/548801589079572497",
+				value: "https://top.gg/bot/548801589079572497",
 				inline: true
 			},
 			{
@@ -45,7 +45,7 @@ message.channel.send({
 		],
 		footer: {
 			icon_url: client.user.avatarURL,
-			text: "v3.0.1 | " + client.guilds.size + "G, " + client.channels.size + "C, " + client.users.size + "U | Commit " + commid + " | by @" + client.users.get("421371986824921109").tag + " using discord.js"
+			text: "v3.0.2 | " + client.guilds.size + "G, " + client.channels.size + "C, " + client.users.size + "U | Commit " + commid + " | by @" + client.users.get("421371986824921109").tag + " using discord.js"
 		}
 	}
 });
